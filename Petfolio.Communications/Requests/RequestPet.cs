@@ -2,7 +2,7 @@ using Petfolio.Communications.Enums;
 
 namespace Petfolio.Communications.Requests;
 
-public class RequestRegisterPet
+public class RequestPet
 {
   public string Name { get; set; } = string.Empty;
 
