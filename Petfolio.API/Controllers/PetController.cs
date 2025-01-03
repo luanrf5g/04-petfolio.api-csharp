@@ -51,12 +51,25 @@ namespace Petfolio.API.Controllers
     [HttpGet]
     [Route("{id}")]
     [ProducesResponseType(typeof(ResponseDetailsPetJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status404NotFound)]
     public IActionResult GetById([FromRoute] int id)
     {
       var useCase = new DetailsPetUseCase();
       var response = useCase.Execute(id);
 
       return Ok(response);
+    }
+
+    [HttpDelete]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status404NotFound)]
+    public IActionResult Delete([FromRoute] int id)
+    {
+      var useCase = new DeletePetUseCase();
+      useCase.Execute(id);
+
+      return NoContent();
     }
   }
 }
