@@ -30,5 +30,22 @@ namespace Petfolio.API.Controllers
 
       return NoContent();
     }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponseFetchPetsJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public IActionResult FetchPets()
+    {
+      var useCase = new FetchPetsUseCase();
+      var response = useCase.Execute();
+
+      if (response.Pets.Count == 0)
+      {
+        return NoContent();
+      }
+
+      return Ok(response);
+
+    }
   }
 }
