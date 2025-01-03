@@ -47,5 +47,16 @@ namespace Petfolio.API.Controllers
       return Ok(response);
 
     }
+
+    [HttpGet]
+    [Route("{id}")]
+    [ProducesResponseType(typeof(ResponseDetailsPetJson), StatusCodes.Status200OK)]
+    public IActionResult GetById([FromRoute] int id)
+    {
+      var useCase = new DetailsPetUseCase();
+      var response = useCase.Execute(id);
+
+      return Ok(response);
+    }
   }
 }
