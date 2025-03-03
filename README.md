@@ -10,4 +10,4 @@ em um projeto futuro, sendo assim, neste projeto foi separado a API da aplicaç�
 enquanto o projeto de comunicação com as requests e responses e o projeto de aplicação com os UseCases da API.
 
 # Skills
-[![My Skills](https://skillicons.dev/icons?i=cs,visualstudio&theme=light)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=cs,dotnet,git,visualstudio&theme=light)](https://skillicons.dev)
